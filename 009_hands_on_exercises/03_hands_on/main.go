@@ -30,6 +30,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strings"
 )
 
 func main() {
@@ -40,7 +41,15 @@ func main() {
 }
 
 func foo(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "foo ran")
+	//io.WriteString(w, "foo ran")
+	w.Write([]byte("foo ran\n")) // this is the same as io.WriteString
+
+	w.WriteHeader(http.StatusOK) // this is the same as w.WriteHeader(200)
+
+	x := req.URL.Path[1:] // this is the path that was requested
+	charToRemove := "/"
+	newString := strings.Replace(x, charToRemove, " ", -1) // this replaces the charToRemove with a space
+	io.WriteString(w, newString)
 }
 
 func bar(w http.ResponseWriter, req *http.Request) {
