@@ -20,8 +20,15 @@ func main() {
 		pow(3, 2, 10),
 		pow(3, 3, 20),
 	)
+
+	if a := 1; a > 0 { //different type of if
+		fmt.Println("a is positive")
+	} else {
+		fmt.Println("a is negative")
+	}
 }
-/* 
+
+/*
 cikti
 27 >= 20
 9 20
