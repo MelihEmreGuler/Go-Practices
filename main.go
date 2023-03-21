@@ -68,7 +68,7 @@ func main() {
 		var myFloat float32 = 4
 		fmt.Println(myFloat)
 
-		var myComplex complex64 = 5.0
+		var myComplex complex64 = 5.
 
 		fmt.Println(myComplex)
 
