@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	//"github.com/MelihEmreGuler/Go-Practices/package1"
+	//test "github.com/MelihEmreGuler/Go-Practices/package1"
+	. "github.com/MelihEmreGuler/Go-Practices/package1"
 )
 
 // bu şekilde genel degisken tanimlayabiliyoruz
@@ -123,6 +126,7 @@ func main() {
 	fmt.Printf("Type of aNumber: %T \n", aNumber) // (type)
  */
 
-	
+	s := Hi()
+	fmt.Println(s)
 
 }

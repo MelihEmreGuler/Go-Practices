@@ -4,6 +4,7 @@ import "fmt"
 
 type bot interface {
 	getGreeting() string
+	getGoodbye() string
 }
 
 type englishBot struct{}
@@ -14,7 +15,12 @@ func main() {
 	sb := spanishBot{}
 
 	printGreeting(eb)
-	printGreeting(sb)
+	printGreeting(eb)
+
+	printGoodbye(eb)
+	printGoodbye(eb)
+
+	fmt.Println(sb)
 }
 
 func (englishBot) getGreeting() string { //func (eb englishBot) getGreeting() string {} yazmamiz arasinda bir fark yok.
@@ -24,9 +30,20 @@ func (englishBot) getGreeting() string { //func (eb englishBot) getGreeting() st
 func (spanishBot) getGreeting() string {
 	return "Hola!"
 }
+func (englishBot) getGoodbye() string {
+	return "Goodbye!"
+}
+/*
+func (spanishBot) getGoodbye() string { //it is necessary to implement all methods of interface
+	return "Adios!"
+}
+*/
 
 func printGreeting(b bot) {
 	fmt.Println(b.getGreeting())
+}
+func printGoodbye(b bot) {
+	fmt.Println(b.getGoodbye())
 }
 
 /*
