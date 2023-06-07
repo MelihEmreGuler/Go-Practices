@@ -1,58 +1,28 @@
 package main
 
-import "fmt"
-
-type bot interface {
-	getGreeting() string
-	getGoodbye() string
-}
-
-type englishBot struct{}
-type spanishBot struct{}
-
 func main() {
-	eb := englishBot{}
-	sb := spanishBot{}
+	dog := Dog{
+		Name:  "Samson",
+		Breed: "German Shephered",
+	}
+	PrintInfo(&dog)
 
-	printGreeting(eb)
-	printGreeting(eb)
+	gorilla := Gorilla{
+		Name:          "King Kong",
+		Color:         "Black",
+		NumberOfTeeth: 32,
+	}
+	PrintInfo(&gorilla)
 
-	printGoodbye(eb)
-	printGoodbye(eb)
+	/*	eb := englishBot{}
+		sb := spanishBot{}
 
-	fmt.Println(sb)
-}
+		printGreeting(eb)
+		printGreeting(eb)
 
-func (englishBot) getGreeting() string { //func (eb englishBot) getGreeting() string {} yazmamiz arasinda bir fark yok.
-	//eger kullanmicaksak eb kopyasini siliebiliriz.
-	return "Hi There!"
-}
-func (spanishBot) getGreeting() string {
-	return "Hola!"
-}
-func (englishBot) getGoodbye() string {
-	return "Goodbye!"
-}
-/*
-func (spanishBot) getGoodbye() string { //it is necessary to implement all methods of interface
-	return "Adios!"
-}
-*/
+		printGoodbye(eb)
+		printGoodbye(eb)
 
-func printGreeting(b bot) {
-	fmt.Println(b.getGreeting())
+		fmt.Println(sb)
+	*/
 }
-func printGoodbye(b bot) {
-	fmt.Println(b.getGoodbye())
-}
-
-/*
-func printGreeting(eb englishBot) { //go da method overloading olmadigi icin aynı isime sahip fonksiyonlar hata vericektir
-	fmt.Println(eb.getGreeting())
-}
-func printGreeting(sb spanishBot) {
-	fmt.Println(sb.getGreeting())
-}
-
-*/
- 
