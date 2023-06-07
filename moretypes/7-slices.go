@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	primes := [6]int{2, 3, 5, 7, 11, 13} // array of 6 integers
@@ -12,5 +15,14 @@ func main() {
 
 	slicedPrimes = append(slicedPrimes, 11, 17)
 	fmt.Println(slicedPrimes) // [3 5 7 11 17]
+
+	var numbers []int
+
+	numbers = append(numbers, 2)
+	numbers = append(numbers, 1)
+	numbers = append(numbers, 3)
+
+	sort.Ints(numbers)
+	fmt.Println("sorted numbers:", numbers)
 
 }
