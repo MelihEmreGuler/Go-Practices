@@ -1,29 +1,22 @@
 package main
 
-import "fmt"
-
-type person struct {
-	firstName   string
-	lastName    string
-	contactInfo //it is same with contactInfo: contactInfo
-}
-type contactInfo struct {
-	email   string
-	zipCode int
-}
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	alex := person{firstName: "Alex", lastName: "Anderson"}
+	alex := Person{firstName: "Alex", lastName: "Anderson"}
 	fmt.Println(alex)
 
-	var melih person
+	var melih Person
 	fmt.Println(melih)
 	fmt.Printf("%+v\n", melih) //%+v : sahip oldugu tum tanimlamalarla birlikte bastir demek
 
-	jim := person{
+	jim := Person{
 		firstName: "Jim",
 		lastName:  "Party",
-		contactInfo: contactInfo{
+		ContactInfo: ContactInfo{
 			email:   "jim@gmail.com",
 			zipCode: 18000,
 		},
@@ -36,13 +29,14 @@ func main() {
 	jim.updateName("Jimmy")
 
 	jim.print()
-}
 
-func (p person) print() {
-	fmt.Printf("%+v\n", p)
-}
+	var melih2 = NewPerson{
+		FirstName:   "Melih",
+		LastName:    "Güler",
+		PhoneNumber: "0535 000 00 00",
+		Age:         25,
+		BirthDate:   time.Now(),
+	}
 
-func (p *person) updateName(newFirstName string) { //eger fonksiyonun tuttugu referansi bir pointer olarak isaretlersek bu referansata yaptigimiz degisiklikler
-	//fonksiyonu cagirdigimiz personun uzerinde gerceklesecek. Pointer secmezsek personun firstName' i degismeyecek. 
-	p.firstName = newFirstName
+	fmt.Println(melih2)
 }
