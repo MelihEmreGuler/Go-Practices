@@ -8,7 +8,7 @@ type Vertex struct {
 
 var map1 map[string]Vertex
 
-var map2 map[int]int
+//var map2 map[int]int
 
 func main() {
 	map1 = make(map[string]Vertex)
