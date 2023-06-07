@@ -4,7 +4,7 @@ import (
 	"fmt"
 	//"github.com/MelihEmreGuler/Go-Practices/package1"
 	//test "github.com/MelihEmreGuler/Go-Practices/package1"
-	. "github.com/MelihEmreGuler/Go-Practices/package1"
+	package1 "github.com/MelihEmreGuler/Go-Practices/package1"
 )
 
 // bu şekilde genel degisken tanimlayabiliyoruz
@@ -124,9 +124,9 @@ func main() {
 	fmt.Printf("My first name is %v \n", string1)                     // %v value olarak kullanılır virgülden sonraki degeri %v nin oldugu yere yapistirir. (printf ile kullanilir	)
 	fmt.Printf("Value of a number as float: %f \n", float64(aNumber)) //float tipinde tutmak icin var
 	fmt.Printf("Type of aNumber: %T \n", aNumber) // (type)
- */
+	*/
 
-	s := Hi()
+	s := package1.Hi()
 	fmt.Println(s)
 
 }
